@@ -1,0 +1,90 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{171BD0FC-FF67-4763-8E2A-B21A201CB883}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avito.UI.PresentationLogic</RootNamespace>
+    <AssemblyName>Avito.UI.PresentationLogic</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DateComparer.cs" />
+    <Compile Include="LayoutUtil.cs" />
+    <Compile Include="PriceComparer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseMainFormPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared.Utils.Desktop\Shared.Utils.Desktop.csproj">
+      <Project>{205E7DB2-9583-4A80-BA05-0C7C93554059}</Project>
+      <Name>Shared.Utils.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.Utils.Lib\Shared.Utils.Lib.csproj">
+      <Project>{9F86F569-2530-4F33-B9EC-2A30092EA569}</Project>
+      <Name>Shared.Utils.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.Utils.Web\Shared.Utils.Web.csproj">
+      <Project>{00F88B69-C475-48B4-981B-ED332681AD89}</Project>
+      <Name>Shared.Utils.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.Model\Avito.Model.csproj">
+      <Project>{f21376c6-ad79-42c1-986b-289c43e25dff}</Project>
+      <Name>Avito.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.Search\Avito.Search.csproj">
+      <Project>{b09c47d1-753b-4e7b-8601-6cab60caf832}</Project>
+      <Name>Avito.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.UI.Interfaces\Avito.UI.Interfaces.csproj">
+      <Project>{BF0F2D32-000B-46BB-A54B-F52A750DCEED}</Project>
+      <Name>Avito.UI.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.20</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

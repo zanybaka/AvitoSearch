@@ -1,0 +1,136 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E032BB7-430F-4627-80E9-268DE66F0216}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avito.UI.WinForms.Window</RootNamespace>
+    <AssemblyName>Avito.UI.WinForms.Window</AssemblyName>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\libs\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator, Version=4.6.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e" />
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\libs\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\libs\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\libs\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GridRow.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared.Utils.Desktop\Shared.Utils.Desktop.csproj">
+      <Project>{205E7DB2-9583-4A80-BA05-0C7C93554059}</Project>
+      <Name>Shared.Utils.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.Utils.Lib\Shared.Utils.Lib.csproj">
+      <Project>{9f86f569-2530-4f33-b9ec-2a30092ea569}</Project>
+      <Name>Shared.Utils.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.Utils.Web\Shared.Utils.Web.csproj">
+      <Project>{00f88b69-c475-48b4-981b-ed332681ad89}</Project>
+      <Name>Shared.Utils.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.Model\Avito.Model.csproj">
+      <Project>{f21376c6-ad79-42c1-986b-289c43e25dff}</Project>
+      <Name>Avito.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.Search\Avito.Search.csproj">
+      <Project>{b09c47d1-753b-4e7b-8601-6cab60caf832}</Project>
+      <Name>Avito.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.UI.PresentationLogic\Avito.UI.PresentationLogic.csproj">
+      <Project>{171BD0FC-FF67-4763-8E2A-B21A201CB883}</Project>
+      <Name>Avito.UI.PresentationLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.UI.Interfaces\Avito.UI.Interfaces.csproj">
+      <Project>{BF0F2D32-000B-46BB-A54B-F52A750DCEED}</Project>
+      <Name>Avito.UI.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avito.UI.WinForms.Logic\Avito.UI.WinForms.Logic.csproj">
+      <Project>{5437889B-1D94-4F8C-A6B6-EB5D9A4234C3}</Project>
+      <Name>Avito.UI.WinForms.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{17f9daf6-112c-4613-99b8-03ca00162928}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.20</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
